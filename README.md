@@ -1,1 +1,2 @@
-# biznessanalytics.github.io
+# yamaki-ba.github.io
+Bizness Analytics Homepage
