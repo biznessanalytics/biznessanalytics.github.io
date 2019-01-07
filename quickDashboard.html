@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Basic Embed</title>
+    <script type="text/javascript" src="https://unpkg.com/amazon-quicksight-embedding-sdk@1.0.1/dist/quicksight-embedding-js-sdk.min.js"></script>
+    <script type="text/javascript">
+        function embedDashboard() {
+            var containerDiv = document.getElementById("dashboardContainer");
+            var params = {
+                url: "https://us-east-1.quicksight.aws.amazon.com/embed/bfdab6a751df47f284bd30dc4c244615/dashboards/41e55eda-51f1-42e0-be2d-299ef93db2cf?isauthcode=true&identityprovider=quicksight&code=AYABePn-sXGZ5MIgYzrigXSSzHQAAAABAAdhd3Mta21zAEthcm46YXdzOmttczp1cy1lYXN0LTE6MjU5NDgwNDYyMTMyOmtleS81NGYwMjdiYy03MDJhLTQxY2YtYmViNS0xNDViOTExNzFkYzMAuAECAQB4l6pD2xhUY2WZ3LzF9ADzT04TvWztj3rAluPGmvaui90BzO3Cxw_gXwp8h1lqAN5osAAAAH4wfAYJKoZIhvcNAQcGoG8wbQIBADBoBgkqhkiG9w0BBwEwHgYJYIZIAWUDBAEuMBEEDLQ7tlH3OdpQ6YM2VQIBEIA7s6Pv3I6YT2paQKivFyyaL2Vg3khPB_onGD9wgTm-sIZKzkE2ayhiy0O5diM0Dd3mrtO5lXMuWqcONEcCAAAAAAwAABAAAAAAAAAAAAAAAAAA-G656ipcxFqaykyfpg0pdv____8AAAABAAAAAAAAAAAAAAABAAAAmwpcmV0heik-wpc0NZGnyHVHAd04o6b_NJZefOQZ_FKXYcNUborCwhrYeTBHl1CVudMNx2b1E3p-OseDhVYkvNJ6ac6y8QGrb_UIhfzFhb6OBF_04eDU-GN8iKqhtyGdiVk6VwjFIh6zoJqtIB-J0ltMCcie7V9T033bMKwG-Ml-ytKXsazImNX6fVDmNRe6vYjsfkdcDupT0xBe2UyAXADhhlkHx5kzV2E0ag%3D%3D&undoRedoDisabled=true&resetDisabled=true",
+                container: containerDiv,
+                parameters: {
+                    country: 'United States'
+                },
+                height: "700px",
+                width: "1000px"
+            };
+            var dashboard = QuickSightEmbedding.embedDashboard(params);
+            dashboard.on('error', onError);
+            dashboard.on('load', onDashboardLoad);
+        }
+    </script>
+
+</head>
+
+<body onload="embedDashboard()">
+Dasboard embed test from quicksight 
+    <div id="dashboardContainer"></div>
+</body>
+
+</html>
